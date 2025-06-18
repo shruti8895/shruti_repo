@@ -1,0 +1,28 @@
+<div *ngIf="isAdmin">
+  <h3>Add New Product</h3>
+  <input [(ngModel)]="newProduct.name" placeholder="Item Name" />
+  <input [(ngModel)]="newProduct.price" type="number" placeholder="Price" />
+  <input [(ngModel)]="newProduct.stock" type="number" placeholder="Stock" />
+  <button (click)="addProduct()">Add Product</button>
+  <div *ngIf="errorMsg" style="color:red; margin-top:10px">{{ errorMsg }}</div>
+</div>
+
+<h3>Product List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Item Name</th>
+    <th>Price (₹)</th>
+    <th>Stock</th>
+    <th *ngIf="isAdmin">Actions</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.stock }}</td>
+    <td *ngIf="isAdmin">
+<button (click)="editProduct(product)">✏️ Edit</button>
+        <button (click)="deleteProduct(product.id)">🗑️ Delete</button>    </td>
+  </tr>
+</table>

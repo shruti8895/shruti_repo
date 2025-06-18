@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+  <nav class="sidebar">
+    <h2>SmartBiz</h2>
+    <ul>
+      <li><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🏠 Dashboard</a></li>
+      <li><a routerLink="/admin/customers" routerLinkActive="active">👥 Customers</a></li>
+      <li><a routerLink="/admin/products" routerLinkActive="active">📦 Products</a></li>
+      <li><a routerLink="/admin/transactions" routerLinkActive="active">💳 Transactions</a></li>
+      <li><a routerLink="/admin/reports" routerLinkActive="active">📊 Reports</a></li>
+      <li><a (click)="logout()">🚪 Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <ng-container *ngIf="isDashboardPage()">
+      <h2>Welcome, Admin 👋</h2>
+      <div class="stats">
+        
+        <div class="stat-card blue">Total Customers<br /><strong>5</strong></div>
+        <div class="stat-card green">Total Products<br /><strong>8</strong></div>
+        <div class="stat-card orange">Total Sales<br /><strong>₹25000</strong></div>
+        <div class="stat-card red">Outstanding Dues<br /><strong>₹4500</strong></div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-purple" routerLink="/admin/customers">+ Add Customer</button>
+        <button class="btn btn-orange" routerLink="/admin/products">+ Add Product</button>
+        <button class="btn btn-blue" (click)="toggleTheme()">
+  <i class="fas fa-moon"></i> Toggle Dark Mode
+</button>
+      </div>
+    </ng-container>
+
+    <router-outlet></router-outlet>
+    
+  </div>
+</div>

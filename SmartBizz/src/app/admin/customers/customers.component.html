@@ -1,0 +1,27 @@
+<div *ngIf="isAdmin">
+  <h3>Add New Customer</h3>
+  <input [(ngModel)]="newCustomer.name" placeholder="Name" />
+  <input [(ngModel)]="newCustomer.mobile" placeholder="Mobile" />
+  <input [(ngModel)]="newCustomer.address" placeholder="Address" />
+  <button (click)="addCustomer()">Add Customer</button>
+</div>
+
+<h3>Customer List</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Address</th>
+    <th *ngIf="isAdmin">Actions</th>
+  </tr>
+  <tr *ngFor="let customer of customers">
+    <td>{{ customer.id }}</td>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.mobile }}</td>
+    <td>{{ customer.address }}</td>
+    <td *ngIf="isAdmin">
+<button (click)="editCustomer(customer)">✏️ Edit</button>
+        <button (click)="deleteCustomer(customer.id)">🗑️ Delete</button>    </td>
+  </tr>
+</table>

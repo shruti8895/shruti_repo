@@ -1,1 +1,173 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+  color: #333;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
+  color: #fff;
+  padding: 30px 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main-content {
+  background: #f7f9fc;
+  padding: 40px;
+  flex: 1;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1 1 220px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  text-align: center;
+  font-size: 15px;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card strong {
+  font-size: 28px;
+  display: block;
+  margin-top: 10px;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  color: white;
+}
+
+.btn-orange {
+  background: linear-gradient(135deg, #570526, #e52e71);
+  color: white;
+}
+.btn-blue {
+  background: linear-gradient(135deg, #1b4b23, #26862d);
+  color: white;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Reports section */
+.report-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.report-card {
+  flex: 1 1 240px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.report-card h3 {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #333;
+}
+
+.report-card p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #4b6cb7;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #0f111a;
+  color: #fff;
+}
+
+body.dark-mode .sidebar {
+  background: linear-gradient(180deg, #20232a 0%, #0d0d0d 100%);
+  color: #eee;
+}
+
+body.dark-mode .main-content,
+body.dark-mode .stat-card,
+body.dark-mode .report-card {
+  background-color: #1a1c29;
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn {
+  filter: brightness(1.1);
+}
+
+body.dark-mode .sidebar a {
+  color: #ccc;
+}
+
+body.dark-mode .sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+

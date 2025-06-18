@@ -1,0 +1,16 @@
+<div class="login-background">
+  <div class="login-overlay">
+    <div class="login-box">
+      <h2>🔐 SmartBiz Login</h2>
+
+      <input type="text" placeholder="👤 Username" [(ngModel)]="username" />
+      <input type="password" placeholder="🔒 Password" [(ngModel)]="password" />
+
+      <button (click)="login()">Login</button>
+
+      <div *ngIf="errorMsg" class="error-msg">
+        {{ errorMsg }}
+      </div>
+    </div>
+  </div>
+</div>
